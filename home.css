@@ -178,14 +178,6 @@ html {
        }
       }
       
-    @media (min-width: 992px) {
-      
-        width: 80%;
-        height: 200%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
       
     footer {
       color: #f2f2f2;
