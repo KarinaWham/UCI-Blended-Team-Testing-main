@@ -46,7 +46,7 @@ h1,h2,h3 {
     border-bottom: 10px solid #d98555;
   }
   
-  /* nav bar  */
+  /* nav bar styling */
   nav ul {
     list-style-type: none;
     display: flex;
