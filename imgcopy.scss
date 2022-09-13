@@ -1,7 +1,13 @@
 /* see the brand guide for colors, fonts, and images in CodePen: 
 https://docs.google.com/document/d/13de5zlWmnox1BbZOiKo1p7tsirkgv0IQLG_bg1R60uE/edit?usp=sharing */
+
+// Declaring and Calling SCSS Variables
 :root {
   $main-color:#f2f2f2;
+}
+
+.main-bkgd {
+  background-color: $background-color;
 }
 
 html {
@@ -21,7 +27,11 @@ body {
 *::after {
   box-sizing: inherit;
 }
-
+// Declaring a Mixin
+@mixin nospace {
+  margin: 0;
+  padding: 0;
+}
 
 
 h1,h2,h3 {
@@ -50,37 +60,33 @@ h1,h2,h3 {
   }
   
   /* nav bar  */
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-
-   nav li {
-    margin: 0 1rem 1rem 1rem;
-     font-size: 1.3rem
-  }
-
-  /* max width of img */
-  nav .logo img {
-    max-width: 150px;
-  }
-  
-  /* img container */
-  nav .logo {
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    display: block;
-  }
-
-  nav a:hover{
-    color: #d98555;
+  // SCSS Nesting for Nav Bar
+  .nav {
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    li {
+      margin: 0 1rem 1rem 1rem;
+      font-size: 1.3rem
+    }
+    logo img {
+      max-width: 150px;
+    }
+    logo {
+      flex-basis: 100%;
+      text-align: center;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+    a:hover {
+      color: #d98555;
+    }
   }
 
   /* bg white  */
@@ -118,31 +124,22 @@ h1,h2,h3 {
   }
 
   .button {
+    color: #f2f2f2;
+    text-decoration: none;
     display: inline-block;
     background-color: #59331D;
     border-radius: 10px;
     padding: 0.5rem 1 rem;
     margin: 0;
-  }
-  
-  .button{
-    display: inline-block;
-    background-color: #59331D;
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
-    margin: 0;
-  }
-
-  .button {
-    color: #f2f2f2;
-    text-decoration: none;
     border: 3px solid #59331d;
-  }
-
-  .button:hover {
+    
+  hover {
     background-color: #f2f2f2;
     color: #59331d;
+    }
   }
+  
+
 
   @media (min-width: 576px) {
     nav ul {
@@ -189,25 +186,24 @@ h1,h2,h3 {
       height: 200%;
     }    
   }
-
-  footer {
-    color: #f2f2f2;
-    text-align: center;
-    border-top: 10px solid #d98555;
+  // Nesting Rules for Footer
+  .footer {
+       color: #f2f2f2;
+       text-align: center;
+       border-top: 10px solid #d98555;
+    a {
+       color: #f2f2f2;
+       font-size: 2rem;
+       display: block;
+       margin: 0 1rem 3rem 1rem;
+    }
+    ul {
+       list-style-type: none;
+       padding: 0;
+       margin: 0;
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: center;
+    }
   }
-  footer a {
-    color: #f2f2f2;
-  }
-  footer ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-  footer a {
-    font-size: 2rem;
-    display: block;
-    margin: 0 1rem 3rem 1rem;
-  }
+ 
